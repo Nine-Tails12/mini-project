@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn python</title>
+    <link href="./styles.css" rel="stylesheet">
+    <link rel="icon" href="./favicon.webp" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/4935d71cbd.js" crossorigin="anonymous"></script>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+<!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet"> -->
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous"> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script> -->
+<style>
+    #four{
+    background: rgb(31, 19, 41);
+    cursor: pointer;
+    border: 2px solid rgb(94, 94, 230);
+    transition: 0.3s ease-out;
+}
+
+#four div{
+    color: rgb(94, 94, 230);
+}
+
+.level-sidebar__chapter__count:hover{
+    background: rgb(31, 19, 41);
+    cursor: pointer;
+    border: 2px solid rgb(94, 94, 230);
+    transition:  ease-out;
+}
+
+.main{
+    font-size: x-large;
+    background: gray;
+    width: fit-content;
+}
+
+.inner-div{
+    margin: 50px;
+}
+
+h1{
+    text-align: center;
+}
+
+.command{
+    background: black;
+    color: white;
+}
+.code{
+    background: rgb(93, 93, 156);
+    color: antiquewhite;
+}
+.example{
+    background: rgb(65, 143, 153);
+    padding: 30px;
+    border-radius: 10px;
+}
+.example-error{
+    background: rgb(192, 75, 75);
+    padding: 30px;
+    border-radius: 10px;
+
+}
+.example-inner{
+    background: white;
+    padding: 7px;
+}
+.editor{
+    background: black;
+    color: white;
+    text-align:start;
+    height: 250px;
+    width: 100%;
+    font-size: x-large;
+}
+.console{
+    background: black;
+    color: white;
+    height: 200px;
+    width: 100%;
+    font-size: x-large;
+    padding: 15px;
+}
+
+.run{
+    width: 100px;
+    height: 40px;
+    background: rgb(56, 224, 56);
+    color: whitesmoke;
+    position: absolute;
+    transform: translate(-100px,0px);
+    font-size: 1rem;
+}
+.run:hover{
+    cursor: pointer;
+    color: black;
+}
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <div class="nav__top">
+                <a href="#" class="nav__top__logo">
+                    <!-- <div><i class="fa-brands fa-star" id="py-logo"></i></div> -->
+                    <div style="display: flex; align-items: center; justify-content: center; 
+                   padding-left: 63%;"><i class="fa-brands fa-python"></i></div>
+
+                    <!-- <div>Levels</div> -->
+                </a>
+                <a href="#" class="nav__top__levels">
+                    <div onclick="openmenu()"><i class="fa-solid fa-bars" onclick="openmenu()"></i></div>
+                    <div onclick="openmenu()">Levels</div>
+                </a>
+                <a href="#" class="nav__top__option">
+                    <div><i class="fa-solid fa-sliders"></i></div>
+                    <div>Options</div>
+                </a>
+            </div>
+            <!-- <div class="nav__bottom" style="margin-bottom: 20px;"> -->
+                
+                <a href="#" class="nav__bottom__accounts" style="margin-bottom: 0; width: 100%; height: 75px;"onclick="openaccount()">
+                    <i class="fa-regular fa-user" onclick="openaccount()"></i>
+                    <div onclick="openaccount()">account</div>
+
+                </a>
+                
+            <!-- </div> -->
+        </div>
+        
+
+        <!-- levels side bar -->
+        <div class="level-sidebar">
+            <div class="level-sidebar__xlevels"><i class="fa-solid fa-xmark" id="cross" onclick="closemenu()"></i> <span>LEVELS</span></div>
+            <div class="level-sidebar__head">
+                <div class="LA"></div> <i class="fa-brands fa-python"></i>
+                <span class="LP">LEARN PYTHON </span>
+            </div>
+
+            <div class="level-sidebar__title">
+                <p class="first-paragraph">chapter 1</p>
+                <p class="second-paragraph" style="color:rgb(194, 145, 240);">INTRODUCTION AND BASICS</p>
+            </div>
+            <a href="./01-intro.html" class="level-sidebar__chapter__count">
+                <div class="count__number">01</div>
+                <div class="description">Intro: What is python?</div>
+            </a>
+            <a href="./02-getting-started.html" class="level-sidebar__chapter__count" id="two">
+                <div class="count__number">02</div>
+                <div class="description">
+                Getting started: installation
+                </div>
+            </a>
+            <a href="./03-py-syntax.html" class="level-sidebar__chapter__count" id="three">
+                <div class="count__number">03</div>
+                <div class="detailed-description">
+                    <p class="des">Python Syntax</p>
+                    <p class="detail"></p>
+                </div>
+            </a>
+            <a  href="./04-variables.html" class="level-sidebar__chapter__count" id="four">
+                <div class="count__number" style="color: rgb(94, 94, 230); background: rgb(31, 19, 41)">04</div>
+                <div class="detailed-description">
+                    <p class="des">Variables</p>
+                    <p class="detail"></p>
+                </div>
+            </a>
+            <a href="./05-quiz1.html" class="level-sidebar__chapter__count">
+                <div class="count__number">05</div>
+                <div class="detailed-description">
+                    <p class="des">QUIZ 1</p>
+                    <p class="detail"></p>
+                </div>
+            </a>
+            <a href="./06-comments.html" class="level-sidebar__chapter__count">
+                <div class="count__number">06</div>
+                <div class="detailed-description">
+                    <p class="des">Comments</p>
+                    <p class="detail"></p>
+                </div>
+            </a>
+            <a href="./07-datatyppes.html" class="level-sidebar__chapter__count">
+                <div class="count__number">07</div>
+                <div class="detailed-description">
+                    <p class="des">Data types</p>
+                    <p class="detail"></p>
+                </div>
+            </a>
+            <a href="./08-casting.html" class="level-sidebar__chapter__count">
+                <div class="count__number">08</div>
+                <div class="description">casting</div>
+            </a>
+            <a href="./09-strings.html" class="level-sidebar__chapter__count">
+                <div class="count__number">09</div>
+                <div class="description">String</div>
+            </a>
+            <a href="./10-quiz2.html" class="level-sidebar__chapter__count">
+                <div class="count__number">10</div>
+                <div class="description">Quiz 2</div>
+            </a>
+            
+
+        </div>
+
+        <!-- levels side bar end here -->
+
+        <!-- display username -->
+        <div class="display-user" style="background: blue;">
+            <div class="notification"><i class="fa-solid fa-comment-medical" onclick="notify()"></i></div>
+            <div class="icon"><i class="fa-solid fa-user"></i></div><span style="font-size: large;">Roberto</span>
+        </div>>
+
+        </div>
+        <!-- end of display user name -->
+
+        <!-- account sidebar begins -->
+        <div class="account">
+            <div class="account__xlevels"><i class="fa-solid fa-xmark" id="cross" onclick="closeaccount()"></i> <span>ACCOUNT</span></div>
+            <div class="account__head">Sign out</div>
+
+
+        </div>
+
+        <!-- account sidebar ends here -->
+        <div class="main">
+            <div class="inner-div">
+                
+
+                <h1>VARIABLES</h1>
+                <p>Think of a variable as a container that stores something. for example, a cup for storing your coffee,
+                   or a bowl for holding the rice your about to eat,a bucket for storing water which you'll use to bath later,
+                   or even your fridge which stores a lot of items. 
+                </p><br>
+
+                <p>Python variables are simply memory locations that hold information, such as numbers or text,
+                    that the python code can later use to perform tasks .
+                     </p><br>
+
+                <p>Python has quite a number of variables which are listed below but in this 
+                    chapter we will only consider the first four(4).
+                </p><br>
+                <ul>
+                    <li>integer</li>
+                    <li>float</li>
+                    <li>string</li>
+                    <li>boolean</li>
+                    <li>list</li>
+                    <li>dictionary</li>
+                    <li>tuple</li>
+                    <li>set</li>
+
+                </ul>
+                <br>
+                <p>
+                    Before we begin learning about variables, let's take note of the this.
+                    Python has no command for declaring a variable. 
+                    A variable is created the moment you first assign a value to it.
+                </p>
+
+                <br>
+                <h4>1. Integer</h4>
+                <p>
+                    A python integer or int refers to whole numbers that can be either positive or negative.
+                </p><br>
+
+                
+                <div class="example">
+                    <p><h4>Example of int variable</h4></p>
+                    <br>
+                    <div class="example-inner">
+                        <p>a = 1</p>
+                        <p>b = -200</p>
+                        <p>c= 3500</p>
+                        <p style="background: rgb(235, 216, 182);">To print the above code ,
+                        we add these three lines to the ones above</p>
+                        <p>print("a =", a)</p>
+                        <p>print("b =", b)</p>
+                        <p>print("c =", c)</p>
+                    </div>
+                    <br>
+                </div>
+                <br>
+
+                
+                <h4>Let<sup>'</sup>s do some console work</h4>
+                <br>
+                <p><span>Instruction:</span>  click on the run button at the top right corner of the editor<br>
+                <!-- 2. Change the "hello, world" text inside the print() function to your name, click run see the results. -->
+                </p>
+                <br>
+                <div>
+                <textarea class="editor">
+            
+                    print("hello, world")
+                </textarea>
+                <button class="run" onclick="PrintHelloWorld()">RUN CODE</button>
+                </div>
+
+                <br>
+                <h2 style="font-family: Georgia, 'Times New Roman', Times, serif;">OUTPUT</h2>
+                <div class="console">
+
+                </div>
+                <!-- <button class="run">RUN CODE</button> -->
+
+                <br>
+                <h4>2. Float</h4>
+                <p>
+                    A python float variable allows you to store floating-point values or decimals.
+                </p><br>
+
+                
+                <div class="example">
+                    <p><h4>Example of float variable</h4></p>
+                    <br>
+                    <div class="example-inner">
+                        <p>x = 5.7</p>
+                        <p>y = 89.99</p>
+                        <p>z= 3.67</p>
+                        <p style="background: rgb(235, 216, 182);">To print the above code ,
+                        we add these three lines to the ones above</p>
+                        <p>print("x =", y)</p>
+                        <p>print("y =", y)</p>
+                        <p>print("z =", z)</p>
+                    </div>
+                    <br>
+                </div>
+                <br>
+                
+                <h4>3. String</h4>
+                <p>
+                    A string variable in Python allows us to store letters, words, or sentences.
+                    To declare a string variable, you must write the letter, word, or sentence in double quotes.
+                    The double quote is very important. without it, your string declaration is invalid and may generate a syntax error.
+                </p><br>
+
+                <div class="example">
+                    <p><h4>Example of string variable</h4></p>
+                    <br>
+                    <div class="example-inner">
+                        <p>name = "Johnny"</p>
+                        <p>full_name = "Johnny English"</p>
+                        <p>position= "CIA detective"</p>
+                        <p style="background: rgb(235, 216, 182);">To print the above code ,
+                        we add these three lines to the ones above</p>
+                        <p>print("name =", name)</p>
+                        <p>print("full_name =", full_name)</p>
+                        <p>print("Position =", Position)</p>
+                    </div>
+                    <br>
+                </div>
+                <br>
+                <p>Taking a careful look at the above code, you'll see that the variable position was capitalized in
+                   the print() function but this will not affect the code in any way since we iniatially established
+                   the fact that python is not case-sensitive.
+                </p>
+                <br>
+
+                <br>
+                <h4>4. Boolean</h4>
+                <p>
+                    A boolean variable stores only two values, True or False. We use them for logical operations, 
+                    like checking if a condition is true or false. We don<sup>'</sup>t enter the true or false in quotes for 
+                    declaring a boolean as we do for strings.
+                </p><br>
+
+                
+                <div class="example">
+                    <p><h4>Example of boolean variable</h4></p>
+                    <br>
+                    <div class="example-inner">
+                        <p>x = true</p>
+                        <p>y = false</p>
+                        <!-- <p>z= 3.67</p> -->
+                        <p style="background: rgb(235, 216, 182);">To print the above code ,
+                        we add these three lines to the ones above</p>
+                        <p>print("x =", y)</p>
+                        <p>print("y =", y)</p>
+                        <p>print("z =", z)</p>
+                    </div>
+                    <br>
+                </div>
+                <br>
+
+
+
+                <div class="example-error">
+                    <p><h4>Example</h4></p>
+                    <br>
+                    <p><b>syntax error</b></p>
+                    <br>
+                    <div class="example-inner">
+                        <p>if 5 > 2:</p>
+                        <p>&nbsp; &nbsp;print("Five is greater than two!")</p>
+                        <p>&nbsp; &nbsp; &nbsp; &nbsp; print("Five is greater than two!")</p>
+                    </div>
+                    <br>
+                </div>
+                <br>
+                <iframe src="https://trinket.io/embed/python/fa95795d40" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+            </div>         
+        </div>
+    </div>
+    <script>
+        // const x = document.querySelector('#cross');
+        const side = document.querySelector('.level-sidebar');
+        const acc = document.querySelector('.account')
+
+        // x.addEventListener('click', closemenu);
+
+        function closemenu(){
+            side.style.display = "none";
+        }
+         
+        function openmenu(){
+            side.style.display = "block";
+        }
+        function closeaccount(){
+            acc.style.display = "none";
+        }
+         
+        function openaccount(){
+            acc.style.display = "block";
+        }
+        
+    </script>
+    <script>
+        let c = document.querySelector(".editor")
+        const console = document.querySelector(".console")
+
+    
+        function PrintHelloWorld(){
+            console.innerText = "hello, world";
+        }
+
+
+
+        c.addEventListener("keyup", function(){
+            if(c.value == "print"){
+                c.style.color = "yellow";
+                console.log(c.value);
+            }
+        })
+
+    </script>
+    <script>
+        
+        function notify(){
+            const notify_icon = document.getElementById("notify")
+            alert("UPCOMING QUIZ IN NEXT CHAPTER.")
+
+        }
+    </script>
+    
+    
+</body>
+</html>

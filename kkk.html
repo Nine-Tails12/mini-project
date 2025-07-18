@@ -1,0 +1,76 @@
+(function() {
+           
+       
+        // const x = document.querySelector('#cross');
+        const side = document.querySelector('.level-sidebar');
+        const acc = document.querySelector('.account')
+
+        // x.addEventListener('click', closemenu);
+
+        function closemenu(){
+            side.style.display = "none";
+        }
+         
+        function openmenu(){
+            side.style.display = "block";
+        }
+        function closeaccount(){
+            acc.style.display = "none";
+        }
+         
+        function openaccount(){
+            acc.style.display = "block";
+        }
+         const displayName = document.getElementById("displayName");
+
+        function getUsername(){
+           let userName = localStorage.getItem('pythonUsername');
+           if (!userName || userName.trim() === ""){
+            userName = "Guest";
+            userName = window.prompt("Please create a username") || "Guest";
+            localStorage.setItem('pythonUsername', userName);
+           }
+           displayName.innerHTML = "hello, " + userName.toUpperCase();
+        }
+
+        window.onload = function() {
+            getUsername();
+        }
+        //get username via prompt and display at top right
+        //let displayName = document.getElementById("displayName");
+        //let userName = window.prompt("Please create a username");
+        //displayName.innerHTML = "hello, " + userName.toUpperCase();
+
+        
+        
+
+         document.getElementById("inputText").addEventListener("keydown", function(e){
+            if(e.key === "Enter" && e.ctrlKey){
+                compareAndPrint();
+            }
+        });
+
+        function compareAndPrint(){
+           
+            const userInput = document.getElementById("inputText").value.trim();
+            const con = document.getElementById("con");
+
+            const sanitizedInput = userInput.replace(/</g, "&lt;").replace(/>/g, "&gt"); // Replace single quotes with double quotes for consistency
+        
+            //white space in the textarea causes the userinput to be different from expectedValue when it  is same.
+            const cleanedInput = userInput.trim().toLowerCase()
+            if(cleanedInput.includes("print('hello world')") || 
+                cleanedInput.includes('print("hello world")') || 
+                cleanedInput.includes('print(hello world)')){
+                    con.innerHTML = "hello world";
+                    con.style.color = "white";
+                }
+                else if(userInput === ""){
+                    con.innerHTML = "please enter some code to run";
+                    con.style.color = "yellow";
+                }
+                else {
+                    con.innerHTML = "Syntax error: Try typing print ('hello world')";
+                    con.style.color = "red";
+                }
+        }}

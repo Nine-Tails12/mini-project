@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn python</title>
+    <link href="./styles.css" rel="stylesheet">
+    <link rel="icon" href="./favicon.webp" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/4935d71cbd.js" crossorigin="anonymous"></script>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+<!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet"> -->
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous"> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script> -->
+<style>
+    #three{
+    background: rgb(31, 19, 41);
+    cursor: pointer;
+    border: 2px solid rgb(94, 94, 230);
+    transition: 0.3s ease-out;
+}
+
+#three div{
+    color: rgb(94, 94, 230);
+}
+
+.level-sidebar__chapter__count:hover{
+    background: rgb(31, 19, 41);
+    cursor: pointer;
+    border: 2px solid rgb(94, 94, 230);
+    transition:  ease-out;
+}
+
+.main{
+    font-size: x-large;
+    /* text-align: center; */
+    background: gray;
+    width: fit-content;
+}
+
+.inner-div{
+    margin: 50px;
+}
+
+h1{
+    text-align: center;
+}
+
+.command{
+    background: black;
+    color: white;
+}
+.code{
+    background: rgb(93, 93, 156);
+    color: antiquewhite;
+}
+.example{
+    background: rgb(65, 143, 153);
+    padding: 30px;
+    border-radius: 10px;
+}
+.example-error{
+    background: rgb(192, 75, 75);
+    padding: 30px;
+    border-radius: 10px;
+
+}
+.example-inner{
+    background: white;
+    padding: 7px;
+}
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <div class="nav__top">
+                <a href="#" class="nav__top__logo">
+                    <div style="display: flex; align-items: center; justify-content: center; 
+                   padding-left: 63%;"><i class="fa-brands fa-python"></i></div>
+                    <!-- <div>Levels</div> -->
+                </a>
+                <a href="#" class="nav__top__levels">
+                    <div onclick="openmenu()"><i class="fa-solid fa-bars" onclick="openmenu()"></i></div>
+                    <div onclick="openmenu()">Levels</div>
+                </a>
+                <a href="#" class="nav__top__option">
+                    <div><i class="fa-solid fa-sliders"></i></div>
+                    <div>Options</div>
+                </a>
+            </div>
+            <!-- <div class="nav__bottom" style="margin-bottom: 20px;"> -->
+                
+                <a href="#" class="nav__bottom__accounts" style="margin-bottom: 0; width: 100%; height: 75px;"onclick="openaccount()">
+                    <i class="fa-regular fa-user" onclick="openaccount()"></i>
+                    <div onclick="openaccount()">account</div>
+
+                </a>
+                
+            <!-- </div> -->
+        </div>
+        
+
+        <!-- levels side bar -->
+        <div class="level-sidebar">
+            <div class="level-sidebar__xlevels"><i class="fa-solid fa-xmark" id="cross" onclick="closemenu()"></i> <span>LEVELS</span></div>
+            <div class="level-sidebar__head">
+                <div class="LA"></div> <i class="fa-brands fa-python"></i>
+                <span class="LP">LEARN PYTHON </span>
+            </div>
+            <div class="level-sidebar__title">
+                <p class="first-paragraph">chapter 1</p>
+                <p class="second-paragraph" style="color:rgb(194, 145, 240);">INTRODUCTION AND BASICS</p>
+            </div>
+            <a href="./01-intro.html" class="level-sidebar__chapter__count">
+                <div class="count__number">01</div>
+                <div class="description">Intro: What is python?</div>
+            </a>
+            <a href="./02-getting-started.html" class="level-sidebar__chapter__count" id="two">
+                <div class="count__number">02</div>
+                <div class="description">
+                Getting started: installation
+                </div>
+            </a>
+            <a href="./03-py-syntax.html" class="level-sidebar__chapter__count" id="three">
+                <div class="count__number" style="color: rgb(94, 94, 230); background: rgb(31, 19, 41);">03</div>
+                <div class="detailed-description">
+                    <p class="des">Python Syntax</p>
+                    <p class="detail"></p>
+                </div>
+            </a>
+            <a  href="./04-variables.html" class="level-sidebar__chapter__count" id="four">
+                <div class="count__number">04</div>
+                <div class="detailed-description">
+                    <p class="des">Variables</p>
+                    <p class="detail"></p>
+                </div>
+            </a>
+            <a href="./05-quiz1.html" class="level-sidebar__chapter__count">
+                <div class="count__number">05</div>
+                <div class="detailed-description">
+                    <p class="des">QUIZ 1</p>
+                    <p class="detail"></p>
+                </div>
+            </a>
+            <a href="./06-comments.html" class="level-sidebar__chapter__count">
+                <div class="count__number">06</div>
+                <div class="detailed-description">
+                    <p class="des">Comments</p>
+                    <p class="detail"></p>
+                </div>
+            </a>
+            <a href="./07-datatyppes.html" class="level-sidebar__chapter__count">
+                <div class="count__number">07</div>
+                <div class="detailed-description">
+                    <p class="des">Data types</p>
+                    <p class="detail"></p>
+                </div>
+            </a>
+            <a href="./08-casting.html" class="level-sidebar__chapter__count">
+                <div class="count__number">08</div>
+                <div class="description">casting</div>
+            </a>
+            <a href="./09-strings.html" class="level-sidebar__chapter__count">
+                <div class="count__number">09</div>
+                <div class="description">String</div>
+            </a>
+            <a href="./10-quiz2.html" class="level-sidebar__chapter__count">
+                <div class="count__number">10</div>
+                <div class="description">Quiz 2</div>
+            </a>
+            
+
+        </div>
+
+        <!-- levels side bar end here -->
+
+        <!-- display username -->
+        <div class="display-user" style="background: blue;">
+            <div class="notification"><i class="fa-sharp fa-solid fa-bell"></i></div>
+            <div class="icon"><i class="fa-solid fa-user"></i></div><span style="font-size: large;">Roberto</span>
+        </div>>
+
+        </div>
+        <!-- end of display user name -->
+
+        <!-- account sidebar begins -->
+        <div class="account">
+            <div class="account__xlevels"><i class="fa-solid fa-xmark" id="cross" onclick="closeaccount()"></i> <span>ACCOUNT</span></div>
+            <div class="account__head">Sign out</div>
+
+
+        </div>
+
+        <!-- account sidebar ends here -->
+        <div class="main">
+            <div class="inner-div">
+
+                <h1>PYTHON SYNTAX</h1>
+                <p>Syntax refers to the rules that define the combinations of symbols that are 
+                    considered to be correctly structured statements or expressions in that language</p><br>
+
+                <p>Python has a very simple syntax which makes it an ideal language for beginners in programming</p><br>
+
+                <li>It is not case-sensitive. This means that "print", "Print" and "PRINT" 
+                    are all considered to be the same even though capitalization has made them look different.
+                    Python does not respect capitalization.
+                </li><br>
+                <li>
+                    It doesn't use a semi-colon at the end of each statement. 
+                    Languages like java and c++ use semi-colons to mark the  end of an executable statement. 
+                    Omitting the semi-colon in such languages leads to generation of syntax error but python does not do that.
+                </li><br>
+
+                <!-- <h1>TALK ABOUT CASE SENSITIVITY AND SIMPLE ENGLISH STRUCTURE</h1> -->
+                <!-- <h1>USE OF NO SEMI COLONS AT THE END OF EACH STATMENT</h1> -->
+                <h1>
+                    PYTHON INDENTATION
+                </h1>
+                
+                <p>
+                    Indentation refers to the spaces at the beginning of a code line.
+                </p>
+                <br>
+                <p>
+                    Where in other programming languages the indentation in code is for readability only,
+                     the indentation in Python is very important.
+                </p>
+                <br>
+                <p>
+                    Python uses indentation to indicate a block of code.
+                </p>
+                <br>
+                <div class="example">
+                    <p><h4>Example</h4></p>
+                    <br>
+                    <div class="example-inner">
+                        <p>if 5 > 2:</p>
+                        <p>&nbsp; &nbsp; print("Five is greater than two!")</p>
+                    </div>
+                    <br>
+                </div>
+                <br>
+                <p>Python will give you an error if you skip the indentation</p>
+                <br>
+                <div class="example-error">
+                    <p><h4>Example</h4></p>
+                    <br>
+                    <p><b>syntax error</b></p>
+                    <br>
+                    <div class="example-inner">
+                        <p>if 5 > 2:</p>
+                        <p>print("Five is greater than two!")</p>
+                    </div>
+                    <br>
+                </div>
+
+                <br>
+                <p>The number of spaces is up to you as a programmer, 
+                the most common use is four, but it has to be at least one.<br>
+                Pressing the tab key to indent is also helpful as this gives you a reasonable amount of white space
+                </p><br>
+                <div class="example">
+                    <p><h4>Example</h4></p>
+                    <br>
+                    <div class="example-inner">
+                        <p>if 5 > 2:</p>
+                        <p>&nbsp; &nbsp; print("Five is greater than two!")</p>
+                        <p>if 5 > 2:</p>
+                        <p>&nbsp; &nbsp; &nbsp; &nbsp; print("Five is greater than two!")</p>
+                    </div>
+                    <br>
+                </div>
+                <br>
+
+                <p>You have to use the same number of spaces in the same block of code, otherwise Python will give you an error:</p>
+                <br>
+
+                <div class="example-error">
+                    <p><h4>Example</h4></p>
+                    <br>
+                    <p><b>syntax error</b></p>
+                    <br>
+                    <div class="example-inner">
+                        <p>if 5 > 2:</p>
+                        <p>&nbsp; &nbsp;print("Five is greater than two!")</p>
+                        <p>&nbsp; &nbsp; &nbsp; &nbsp; print("Five is greater than two!")</p>
+                    </div>
+                    <br>
+                </div>
+                <br>
+                <p>Now Lets us the text editor and console below to practice what we have learnt in this chapter</p>
+                <br>
+                <br>
+
+                <iframe src="https://trinket.io/embed/python/fa95795d40" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+
+            </div>         
+        </div>
+    </div>
+    <script>
+        // const x = document.querySelector('#cross');
+        const side = document.querySelector('.level-sidebar');
+        const acc = document.querySelector('.account')
+
+        // x.addEventListener('click', closemenu);
+
+        function closemenu(){
+            side.style.display = "none";
+        }
+         
+        function openmenu(){
+            side.style.display = "block";
+        }
+        function closeaccount(){
+            acc.style.display = "none";
+        }
+         
+        function openaccount(){
+            acc.style.display = "block";
+        }
+        
+    </script>
+    
+</body>
+</html>

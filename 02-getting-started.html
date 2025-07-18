@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn python</title>
+    <link href="./styles.css" rel="stylesheet">
+    <link rel="icon" href="./favicon.webp" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/4935d71cbd.js" crossorigin="anonymous"></script>
+   
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+<style>
+    #two{
+    background: rgb(31, 19, 41);
+    cursor: pointer;
+    border: 2px solid rgb(94, 94, 230);
+    transition: 0.3s ease-out;
+}
+
+#two div{
+    color: rgb(94, 94, 230);
+}
+
+.level-sidebar__chapter__count:hover{
+    background: rgb(31, 19, 41);
+    cursor: pointer;
+    border: 2px solid rgb(94, 94, 230);
+    transition:  ease-out;
+}
+
+.main{
+    font-size: x-large;
+    /* text-align: center; */
+    background: gray;
+    width: fit-content;
+}
+
+.inner-div{
+    margin: 50px;
+}
+
+h1{
+    text-align: center;
+}
+
+.command{
+    background: black;
+    color: white;
+    padding: 10px;
+    font-family: monospace; 
+    border-radius: 5px;
+}
+.code{
+    background: rgb(93, 93, 156);
+    color: antiquewhite;
+}
+.editor{
+    font-family: monospace;
+    background: black;
+    color: white;
+    text-align:start;
+    height: 250px;
+    width: 100%;
+    font-size: x-large;
+    outline: none;
+    resize: vertical;
+    border-radius: 5px;
+    /* border: ; */
+    /* padding: 10px; */
+}
+.console{
+    background: black;
+    color: white;
+    height: 200px;
+    width: 100%;
+    font-size: x-large;
+    padding: 15px;
+}
+
+.run{
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background 0.3s;;
+}
+.run:hover{
+   background: rgb(45, 190, 45);
+}
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <div class="nav__top">
+                <a href="#" class="nav__top__logo">
+                    <div style="display: flex; align-items: center; justify-content: center; 
+                   padding-left: 63%;"><i class="fa-brands fa-python"></i></div>
+                    <!-- <div>Levels</div> -->
+                </a>
+                <a href="#" class="nav__top__levels">
+                    <div onclick="openmenu()"><i class="fa-solid fa-bars" onclick="openmenu()"></i></div>
+                    <div onclick="openmenu()">Levels</div>
+                </a>
+                <a href="#" class="nav__top__option">
+                    <div><i class="fa-solid fa-sliders"></i></div>
+                    <div>Options</div>
+                </a>
+            </div>
+            <!-- <div class="nav__bottom" style="margin-bottom: 20px;"> -->
+                
+                <a href="#" class="nav__bottom__accounts" style="margin-bottom: 0; width: 100%; height: 75px;"onclick="openaccount()">
+                    <i class="fa-regular fa-user" onclick="openaccount()"></i>
+                    <div onclick="openaccount()">account</div>
+
+                </a>
+                
+            <!-- </div> -->
+        </div>
+        
+
+        <!-- levels side bar -->
+        <div class="level-sidebar">
+            <div class="level-sidebar__xlevels"><i class="fa-solid fa-xmark" id="cross" onclick="closemenu()"></i> <span>LEVELS</span></div>
+            <div class="level-sidebar__head">
+                <div class="LA"></div> <i class="fa-brands fa-python"></i>
+                <span class="LP">LEARN PYTHON </span>
+            </div>
+
+            <div class="level-sidebar__title">
+                <p class="first-paragraph">chapter 1</p>
+                <p class="second-paragraph" style="color:rgb(194, 145, 240);">INTRODUCTION AND BASICS</p>
+            </div>
+            <a href="./01-intro.html" class="level-sidebar__chapter__count">
+                <div class="count__number">01</div>
+                <div class="description">Intro: What is python?</div>
+            </a>
+            <a href="./02-getting-started.html" class="level-sidebar__chapter__count" id="two">
+                <div class="count__number" style="color: rgb(94, 94, 230); background: rgb(31, 19, 41);">02</div>
+                <div class="description">
+                Getting started: installation
+                </div>
+            </a>
+            <a href="./03-py-syntax.html" class="level-sidebar__chapter__count">
+                <div class="count__number">03</div>
+                <div class="detailed-description">
+                    <p class="des">Python Syntax</p>
+                    <p class="detail"></p>
+                </div>
+            </a>
+            <a href="./04-variables.html" class="level-sidebar__chapter__count">
+                <div class="count__number">04</div>
+                <div class="detailed-description">
+                    <p class="des">Variables</p>
+                    <p class="detail"></p>
+                </div>
+            </a>
+            <a href="./05-quiz1.html" class="level-sidebar__chapter__count">
+                <div class="count__number">05</div>
+                <div class="detailed-description">
+                    <p class="des">QUIZ 1</p>
+                    <p class="detail"></p>
+                </div>
+            </a>
+            <a href="./06-comments.html" class="level-sidebar__chapter__count">
+                <div class="count__number">06</div>
+                <div class="detailed-description">
+                    <p class="des">Comments</p>
+                    <p class="detail"></p>
+                </div>
+            </a>
+            <a href="./07-datatyppes.html" class="level-sidebar__chapter__count">
+                <div class="count__number">07</div>
+                <div class="detailed-description">
+                    <p class="des">Data types</p>
+                    <p class="detail"></p>
+                </div>
+            </a>
+            <a href="./08-casting.html" class="level-sidebar__chapter__count">
+                <div class="count__number">08</div>
+                <div class="description">casting</div>
+            </a>
+            <a href="./09-strings.html" class="level-sidebar__chapter__count">
+                <div class="count__number">09</div>
+                <div class="description">String</div>
+            </a>
+            <a href="./10-quiz2.html" class="level-sidebar__chapter__count">
+                <div class="count__number">10</div>
+                <div class="description">Quiz 2</div>
+            </a>
+            
+
+        </div>
+
+        <!-- levels side bar end here -->
+
+        <!-- display username -->
+        <div class="display-user" style="background: blue;">
+            <div class="notification"><i class="fa-sharp fa-solid fa-bell"></i></div>
+            <div class="icon"><i class="fa-solid fa-user"></i></div><span id="displayName"
+            style="font-size: large;">Roberto</span>
+        </div>>
+
+        </div>
+        <!-- end of display user name -->
+
+        <!-- account sidebar begins -->
+        <div class="account">
+            <div class="account__xlevels"><i class="fa-solid fa-xmark" id="cross" onclick="closeaccount()"></i> <span>ACCOUNT</span></div>
+            <div class="account__head">Sign out</div>
+
+
+        </div>
+
+        <!-- account sidebar ends here -->
+        <div class="main">
+            <div class="inner-div">
+            <h1>Python Install</h1>
+<br>
+<p> Many PCs and Macs will have python already installed.</p>
+
+Many PCs and Macs will have python already installed.
+<br>
+<br>
+To check if you have python installed on a Windows PC, search in the start bar for Python or run the following on the Command Line (cmd.exe):
+<br>
+<br>  
+
+<div class="command">C:\Users\Your Name>python --version</div>
+<br>
+
+<p>To check if you have python installed on a Linux or Mac, then on linux open the command line or on Mac open the Terminal and type:</p>
+<br>
+<div class="command">python --version</div>
+<br>
+<p>
+    If you find that you do not have Python installed on your computer, 
+    then you can download it for free from the following website: https://www.python.org/
+</p>
+<br>
+<p>
+    All python files have to be saved with the extension ".py". For example: hello.py
+    this way, the python interpreter can recognise and execute the files. 
+</p>
+<br>
+<p>
+    The way to run a python file is like this on the command line:<br>
+    <br>
+
+    <div class="command">C:\Users\Your Name>python helloworld.py</div>
+</p>
+<br>
+<p>
+    Let's write our first Python file, called helloworld.py, which can be done in any text editor.
+    <br>
+</p>
+<br>
+<div class="code">print("hello, world!")</div>
+<br>
+<p>
+    Simple as that. Save your file. Open your command line, navigate to the directory where you saved your file, and run:
+</p>
+<br>
+<div class="command">C:\Users\Your Name>python helloworld.py </div><br>
+
+<p>The output should read:</p><br>
+<div class="command">hello, world!</div><br>
+<br>
+<p>Now let us try it here with our own text editor and console</p>
+<br>
+<p>Type this: print('hello world') inside the code editor below and click run to view your output</p>
+<br>
+
+<div>
+    <label for="inputText">PYTHON EDITOR</label>
+    <textarea class="editor" id="inputText" placeholder="Type your code here...">   
+    </textarea>
+
+    <a href="https://www.python.org/" target="_blank">https://www.python.org</a>
+
+    <button class="run" onclick="compareAndPrint()">RUN CODE (Real Python)</button>
+    </div>
+
+    <br>
+    <h2 style="font-family: Georgia, 'Times New Roman', Times, serif;">OUTPUT</h2>
+    <div class="console" id="con">
+
+    </div>
+    <br>
+Congratulations, you have written and executed your first Python program.
+<br><br>
+
+</div>         
+        </div>
+    </div>
+    <script>
+        
+(function() {
+    // Cache DOM elements
+    const side = document.querySelector('.level-sidebar');
+    const acc = document.querySelector('.account');
+    const displayName = document.getElementById("displayName");
+    const inputText = document.getElementById("inputText");
+    const con = document.getElementById("con");
+
+    // Menu functions
+    function closemenu() { side.style.display = "none"; }
+    function openmenu() { side.style.display = "block"; }
+    function closeaccount() { acc.style.display = "none"; }
+    function openaccount() { acc.style.display = "block"; }
+
+    // Username handling
+    function getUsername() {
+        let userName = localStorage.getItem('pythonUsername');
+        if (!userName || userName.trim() === "") {
+            userName = window.prompt("Please create a username") || "Guest";
+            localStorage.setItem('pythonUsername', userName);
+        }
+        displayName.textContent = "Hello, " + userName.toUpperCase();
+    }
+
+    // Code execution
+  async function compareAndPrint() {
+    try {
+        const userInput = inputText.value.trim();
+        
+        if (!userInput) {
+            con.innerHTML = "Please enter some code to run";
+            con.style.color = "yellow";
+            return;
+        }
+
+        // Load Pyodide (if not already loaded)
+        if (!window.pyodide) {
+            con.innerHTML = "Loading Python...";
+            window.pyodide = await loadPyodide({
+                indexURL: "https://cdn.jsdelivr.net/pyodide/v0.23.4/full/",
+            });
+        }
+
+        // Run Python code
+        try {
+            const output = await pyodide.runPythonAsync(userInput);
+            con.innerHTML = output || "Code executed (no output)";
+            con.style.color = "white";
+        } catch (e) {
+            con.innerHTML = "Python Error: " + e.message;
+            con.style.color = "red";
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        con.innerHTML = "An error occurred";
+        con.style.color = "red";
+    }
+}
+
+    // Event listeners
+    inputText.addEventListener("keydown", function(e) {
+        if (e.key === "Enter" && e.ctrlKey) {
+            compareAndPrint();
+        }
+    });
+
+    // Initialize
+   window.onload = function() {
+    getUsername();
+    brython(); // Initialize Brython
+};
+})();
+    </script>
+</body>
+</html>
